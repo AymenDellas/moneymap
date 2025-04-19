@@ -75,23 +75,23 @@ const Navbar = () => {
     {
       title: "Overview",
       path: "/dashboard/overview",
-      icon: <LayoutDashboard size={20} />
+      icon: <LayoutDashboard size={20} />,
     },
     {
       title: "Transactions",
       path: "/dashboard/transactions",
-      icon: <ArrowLeftRight size={20} />
+      icon: <ArrowLeftRight size={20} />,
     },
     {
       title: "Saving Goals",
       path: "/dashboard/savings-goals",
-      icon: <HandCoins size={20} />
+      icon: <HandCoins size={20} />,
     },
     {
       title: "Reports",
       path: "/dashboard/reports",
-      icon: <Clipboard size={20} />
-    }
+      icon: <Clipboard size={20} />,
+    },
   ];
 
   return (
@@ -102,7 +102,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 mr-6">
               <img
-                src="/public/logo.png"
+                src="/logo.png"
                 alt="Logo"
                 className="aspect-video w-32 md:w-40 h-8 object-cover"
               />
@@ -146,14 +146,18 @@ const Navbar = () => {
                     className="flex items-center space-x-2 bg-light/10 hover:bg-light/20 text-light px-3 py-2 rounded-lg transition-all duration-200"
                   >
                     <CircleUserRound size={20} />
-                    <span className="hidden lg:inline-block">{user.email?.split('@')[0]}</span>
+                    <span className="hidden lg:inline-block">
+                      {user.email?.split("@")[0]}
+                    </span>
                   </button>
-                  
+
                   {userMenuOpen && (
                     <div className="absolute right-0 mt-2 w-48 bg-secondary rounded-lg shadow-lg border border-light/10 py-1 z-50">
                       <div className="px-4 py-2 border-b border-light/10">
                         <p className="text-sm text-light/80">Signed in as</p>
-                        <p className="text-sm font-medium text-light truncate">{user.email}</p>
+                        <p className="text-sm font-medium text-light truncate">
+                          {user.email}
+                        </p>
                       </div>
                       <button
                         onClick={handleLogout}
@@ -188,7 +192,7 @@ const Navbar = () => {
 
       {/* Overlay */}
       {isMenuOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity"
           onClick={() => setIsMenuOpen(false)}
         ></div>
@@ -203,12 +207,12 @@ const Navbar = () => {
         <div className="flex items-center justify-between border-b border-light/20 px-4 py-5">
           <Link to="/" onClick={() => setIsMenuOpen(false)}>
             <img
-              src="/public/logo.png"
+              src="/logo.png"
               alt="Logo"
               className="aspect-video w-32 h-7 object-cover"
             />
           </Link>
-          <button 
+          <button
             onClick={() => setIsMenuOpen(false)}
             className="text-light hover:text-purple p-1 rounded-lg transition-colors"
             aria-label="Close menu"
@@ -223,7 +227,9 @@ const Navbar = () => {
               <User size={24} className="text-purple" />
             </div>
             <div>
-              <div className="text-light font-medium">{user.email?.split('@')[0]}</div>
+              <div className="text-light font-medium">
+                {user.email?.split("@")[0]}
+              </div>
               <div className="text-light/60 text-xs">{user.email}</div>
             </div>
           </div>

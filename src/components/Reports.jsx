@@ -18,7 +18,7 @@ const Reports = () => {
           </h2>
           <div className="mt-8">
             <button
-              onClick={() => (window.location.href = "/overview")}
+              onClick={() => (window.location.href = "/dashboard/overview")}
               className="px-6 py-3 bg-purple/20 hover:bg-purple/30 border border-purple/40 text-purple rounded-lg transition-all duration-300 font-medium"
             >
               Return to Overview

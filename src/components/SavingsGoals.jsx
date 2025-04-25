@@ -80,7 +80,6 @@ const SavingsGoals = () => {
     if (isNaN(parsedAmount)) return;
 
     try {
-      // Get current goal data
       const { data, error: fetchError } = await supabase
         .from("savings")
         .select("*")

@@ -23,11 +23,11 @@ const Transactions = () => {
   }, [transactions]);
   return (
     <>
-      <section className="text-light">
-        <div className="w-[70%]  border-light/20 rounded-lg mx-auto space-y-4 p-4">
+      <section className="text-light ">
+        <div className="w-[95%] lg:w-[70%]  border-light/20 rounded-lg mx-auto space-y-4 p-4">
           <h1 className="text-2xl font-bold">Recent Transactions</h1>
 
-          <div className="w-full bg-gray-800 rounded-xl overflow-hidden border border-light/20">
+          <div className="w-full bg-gray-800 rounded-xl overflow-y-hidden border border-light/20">
             {isLoading ? (
               <div className="flex justify-center p-8">
                 <p>Loading transactions...</p>
@@ -37,7 +37,7 @@ const Transactions = () => {
                 <p>No transactions found</p>
               </div>
             ) : (
-              <table class="w-full">
+              <table class="w-full overflow-x-scroll">
                 <thead className="bg-gray-600 ">
                   <tr className="text-left">
                     <th className="px-6 py-4 font-medium">Date</th>
